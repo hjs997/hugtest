@@ -1,44 +1,37 @@
-name: Build and Push Docker Image to GHCR and Docker Hub
+name: Build and Push to GitHub Container Registry
 
+# 触发条件：当 source 分支有推送时运行
 on:
   push:
     branches:
       - source
-  pull_request:
-    branches:
-      - source
-  workflow_dispatch:  # 允许手动触发
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-and-push:
+    runs-on: ubuntu-latest  # 使用 Ubuntu 环境运行
 
     steps:
+      # 1. 检出代码
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
+      # 2. 设置 Docker Buildx（支持多架构构建，可选）
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
 
-      - name: Log in to Docker Hub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-
-      - name: Log in to GitHub Container Registry (GHCR)
-        uses: docker/login-action@v2
+      # 3. 登录到 GitHub Container Registry
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ github.actor }}  # GitHub 用户名，自动获取
+          password: ${{ secrets.GITHUB_TOKEN }}  # GitHub Token，自动提供
 
-      - name: Build and push Docker image to both registries
-        run: |
-          IMAGE_NAME=myusername/hugtest
-          GHCR_IMAGE_NAME=ghcr.io/${{ github.repository_owner }}/hugtest
-          
-          docker buildx build --platform linux/amd64,linux/arm64 \
-            -t $IMAGE_NAME:latest \
-            -t $GHCR_IMAGE_NAME:latest \
-            --push .
+      # 4. 构建并推送 Docker 镜像
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .  # Dockerfile 所在的目录（根目录）
+          file: ./Dockerfile  # 指定 Dockerfile 的路径
+          push: true  # 推送镜像
+          tags: ghcr.io/${{ github.repository }}:latest  # 镜像名称和标签
