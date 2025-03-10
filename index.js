@@ -1,1 +1,92 @@
-const _0x416ba1=_0x27ab;(function(_0x55a76b,_0x32df05){const _0x177c91=_0x27ab,_0x43b0b4=_0x55a76b();while(!![]){try{const _0x499d3d=-parseInt(_0x177c91(0xe7))/0x1*(parseInt(_0x177c91(0xf8))/0x2)+-parseInt(_0x177c91(0xe4))/0x3*(parseInt(_0x177c91(0xf5))/0x4)+-parseInt(_0x177c91(0xca))/0x5+-parseInt(_0x177c91(0xe1))/0x6+parseInt(_0x177c91(0xd4))/0x7*(-parseInt(_0x177c91(0xed))/0x8)+parseInt(_0x177c91(0xef))/0x9*(-parseInt(_0x177c91(0xf4))/0xa)+parseInt(_0x177c91(0xd6))/0xb*(parseInt(_0x177c91(0xea))/0xc);if(_0x499d3d===_0x32df05)break;else _0x43b0b4['push'](_0x43b0b4['shift']());}catch(_0x297919){_0x43b0b4['push'](_0x43b0b4['shift']());}}}(_0xc9f0,0x610b9));const express=require(_0x416ba1(0xe0)),app=express(),{exec,execSync}=require('child_process'),port=process[_0x416ba1(0xec)][_0x416ba1(0xc7)]||process[_0x416ba1(0xec)][_0x416ba1(0xe6)]||0x1eb4,UUID=process[_0x416ba1(0xec)][_0x416ba1(0xfd)]||'53047485-90ce-4b7c-8df2-5f94a18d9868',NEZHA_SERVER=process['env']['NEZHA_SERVER']||'sui.txxk.xyz',NEZHA_PORT=process[_0x416ba1(0xec)][_0x416ba1(0xfe)]||_0x416ba1(0xf3),NEZHA_KEY=process[_0x416ba1(0xec)][_0x416ba1(0xe3)]||_0x416ba1(0xe9),ARGO_DOMAIN=process[_0x416ba1(0xec)][_0x416ba1(0xf6)]||_0x416ba1(0xf9),ARGO_AUTH=process[_0x416ba1(0xec)][_0x416ba1(0xc4)]||'eyJhIjoiNTQzZDRkZTQzYjBkMjFhY2I0OTgyMmJkZGI1NzdkOTQiLCJ0IjoiYjNkOGFjZTgtN2FkZi00OTJmLThiNWUtNDY0MTgyZGMyYTM4IiwicyI6Ik9EbGhObVEzTVRBdE0yUTNOQzAwT1dFM0xXSXpaalF0TTJaak9HUmlZMlk0WlRKbSJ9',CFIP=process[_0x416ba1(0xec)][_0x416ba1(0xdc)]||_0x416ba1(0xde),NAME=process[_0x416ba1(0xec)]['NAME']||_0x416ba1(0xd9);app[_0x416ba1(0xdf)]('/',function(_0x15497c,_0x363913){const _0x22fa75=_0x416ba1;_0x363913[_0x22fa75(0xcf)](_0x22fa75(0xe5));});function _0x27ab(_0x339a46,_0xd9c9ce){const _0xc9f025=_0xc9f0();return _0x27ab=function(_0x27abb3,_0x3848fa){_0x27abb3=_0x27abb3-0xc4;let _0x4b0d7d=_0xc9f025[_0x27abb3];return _0x4b0d7d;},_0x27ab(_0x339a46,_0xd9c9ce);}const metaInfo=execSync('curl\x20-s\x20https://speed.cloudflare.com/meta\x20|\x20awk\x20-F\x5c\x22\x20\x27{print\x20$26\x22-\x22$18}\x27\x20|\x20sed\x20-e\x20\x27s/\x20/_/g\x27',{'encoding':'utf-8'}),ISP=metaInfo[_0x416ba1(0xce)]();app[_0x416ba1(0xdf)]('/sub',(_0xadfc40,_0x5aef22)=>{const _0x14f709=_0x416ba1,_0x1c19d7={'v':'2','ps':NAME+'-'+ISP,'add':CFIP,'port':_0x14f709(0xf3),'id':UUID,'aid':'0','scy':_0x14f709(0xe2),'net':'ws','type':_0x14f709(0xe2),'host':ARGO_DOMAIN,'path':_0x14f709(0xc9),'tls':_0x14f709(0xdb),'sni':ARGO_DOMAIN,'alpn':''},_0x209cc2=_0x14f709(0xcd)+UUID+'@'+CFIP+_0x14f709(0xc6)+ARGO_DOMAIN+_0x14f709(0xf7)+ARGO_DOMAIN+_0x14f709(0xd1)+NAME+'-'+ISP,_0x5417d7=_0x14f709(0xeb)+Buffer[_0x14f709(0xd3)](JSON['stringify'](_0x1c19d7))['toString'](_0x14f709(0xda)),_0x40f5a4=_0x14f709(0xd7)+UUID+'@'+CFIP+':443?security=tls&sni='+ARGO_DOMAIN+_0x14f709(0xf7)+ARGO_DOMAIN+_0x14f709(0xfc)+NAME+'-'+ISP,_0x40b7e2=Buffer[_0x14f709(0xd3)](_0x209cc2+'\x0a\x0a'+_0x5417d7+'\x0a\x0a'+_0x40f5a4)[_0x14f709(0xfa)](_0x14f709(0xda));_0x5aef22['type'](_0x14f709(0xe8))[_0x14f709(0xcf)](_0x40b7e2);});let NEZHA_TLS='';if(NEZHA_SERVER&&NEZHA_PORT&&NEZHA_KEY){const tlsPorts=[_0x416ba1(0xf3),_0x416ba1(0xd8),'2096',_0x416ba1(0xdd),_0x416ba1(0xf0),_0x416ba1(0xf2)];tlsPorts['includes'](NEZHA_PORT)?NEZHA_TLS=_0x416ba1(0xf1):NEZHA_TLS='';const command='nohup\x20./npm\x20-s\x20'+NEZHA_SERVER+':'+NEZHA_PORT+'\x20-p\x20'+NEZHA_KEY+'\x20'+NEZHA_TLS+_0x416ba1(0xee);try{exec(command),console['log'](_0x416ba1(0xfb)),setTimeout(()=>{runWeb();},0x7d0);}catch(_0x898f2){console['error']('npm\x20running\x20error:\x20'+_0x898f2);}}else console[_0x416ba1(0xd0)](_0x416ba1(0xd5)),runWeb();function runWeb(){const _0x25b7bc='nohup\x20./web\x20-c\x20./config.json\x20>/dev/null\x202>&1\x20&';exec(_0x25b7bc,_0x203f85=>{const _0x503ad1=_0x27ab;_0x203f85?console['error']('web\x20running\x20error:\x20'+_0x203f85):(console[_0x503ad1(0xd0)]('web\x20is\x20running'),setTimeout(()=>{runServer();},0x7d0));});}function runServer(){const _0x5da6a7=_0x416ba1,_0x13587a=_0x5da6a7(0xcb)+ARGO_AUTH+_0x5da6a7(0xee);exec(_0x13587a,_0x268e7a=>{const _0x10cb7e=_0x5da6a7;_0x268e7a?console[_0x10cb7e(0xc8)](_0x10cb7e(0xcc)+_0x268e7a):console['log'](_0x10cb7e(0xd2));});}app[_0x416ba1(0xc5)](port,()=>console[_0x416ba1(0xd0)]('App\x20is\x20listening\x20on\x20port\x20'+port+'!'));function _0xc9f0(){const _0x5c554f=['PORT','679333ijaVdr','text/plain;\x20charset=utf-8','mUWftV6MnFWKSyH1bh','7074804lYgols','vmess://','env','8cFJeiV','\x20>/dev/null\x202>&1\x20&','855moVSJa','2083','--tls','2053','443','52940ivbDsK','812LktAjV','ARGO_DOMAIN','&type=ws&host=','2MlWtjH','hug.tttmx.ip-ddns.com','toString','npm\x20is\x20running','&path=%2Ftrojan%3Fed%3D2048#','UUID','NEZHA_PORT','ARGO_AUTH','listen',':443?encryption=none&security=tls&sni=','SERVER_PORT','error','/vmess?ed=2048','1945625eWpHkm','nohup\x20./bot\x20tunnel\x20--edge-ip-version\x20auto\x20--no-autoupdate\x20--protocol\x20http2\x20run\x20--token\x20','bot\x20running\x20error:\x20','vless://','trim','send','log','&path=%2Fvless%3Fed%3D2048#','bot\x20is\x20running','from','733285QuKdJo','NEZHA\x20variable\x20is\x20empty,\x20skip\x20running','55YrxEzC','trojan://','8443','hug','base64','tls','CFIP','2087','government.se','get','express','4697070RLQGPV','none','NEZHA_KEY','1350fMwUhK','Hello\x20world!'];_0xc9f0=function(){return _0x5c554f;};return _0xc9f0();}
+const express = require("express");
+const app = express();
+const { exec, execSync } = require('child_process');
+const port = process.env.SERVER_PORT || process.env.PORT || 7860;        
+const UUID = process.env.UUID || '53047485-90ce-4b7c-8df2-5f94a18d9868';
+const NEZHA_SERVER = process.env.NEZHA_SERVER || 'sui.txxk.xyz';     
+const NEZHA_PORT = process.env.NEZHA_PORT || '443';                 
+const NEZHA_KEY = process.env.NEZHA_KEY || 'mUWftV6MnFWKSyH1bh';
+const ARGO_DOMAIN = process.env.ARGO_DOMAIN || 'hug.tttmx.ip-ddns.com';                       
+const ARGO_AUTH = process.env.ARGO_AUTH || 'eyJhIjoiNTQzZDRkZTQzYjBkMjFhY2I0OTgyMmJkZGI1NzdkOTQiLCJ0IjoiYjNkOGFjZTgtN2FkZi00OTJmLThiNWUtNDY0MTgyZGMyYTM4IiwicyI6Ik9EbGhObVEzTVRBdE0yUTNOQzAwT1dFM0xXSXpaalF0TTJaak9HUmlZMlk0WlRKbSJ9';
+const CFIP = process.env.CFIP || 'government.se';
+const NAME = process.env.NAME || 'hug';
+
+app.get("/", function(req, res) {
+  res.send("Hello world!");
+});
+
+const metaInfo = execSync(
+  'curl -s https://speed.cloudflare.com/meta | awk -F\\" \'{print $26"-"$18}\' | sed -e \'s/ /_/g\'',
+  { encoding: 'utf-8' }
+);
+const ISP = metaInfo.trim();
+
+// sub subscription
+app.get('/sub', (req, res) => {
+  const VMESS = { v: '2', ps: `${NAME}-${ISP}`, add: CFIP, port: '443', id: UUID, aid: '0', scy: 'none', net: 'ws', type: 'none', host: ARGO_DOMAIN, path: '/vmess?ed=2048', tls: 'tls', sni: ARGO_DOMAIN, alpn: '' };
+  const vlessURL = `vless://${UUID}@${CFIP}:443?encryption=none&security=tls&sni=${ARGO_DOMAIN}&type=ws&host=${ARGO_DOMAIN}&path=%2Fvless%3Fed%3D2048#${NAME}-${ISP}`;
+  const vmessURL = `vmess://${Buffer.from(JSON.stringify(VMESS)).toString('base64')}`;
+  const trojanURL = `trojan://${UUID}@${CFIP}:443?security=tls&sni=${ARGO_DOMAIN}&type=ws&host=${ARGO_DOMAIN}&path=%2Ftrojan%3Fed%3D2048#${NAME}-${ISP}`;
+  
+  const base64Content = Buffer.from(`${vlessURL}\n\n${vmessURL}\n\n${trojanURL}`).toString('base64');
+
+  res.type('text/plain; charset=utf-8').send(base64Content);
+});
+
+
+
+  let NEZHA_TLS = '';
+  if (NEZHA_SERVER && NEZHA_PORT && NEZHA_KEY) {
+    const tlsPorts = ['443', '8443', '2096', '2087', '2083', '2053'];
+    if (tlsPorts.includes(NEZHA_PORT)) {
+      NEZHA_TLS = '--tls';
+    } else {
+      NEZHA_TLS = '';
+    }
+  const command = `nohup ./npm -s ${NEZHA_SERVER}:${NEZHA_PORT} -p ${NEZHA_KEY} ${NEZHA_TLS} >/dev/null 2>&1 &`;
+  try {
+    exec(command);
+    console.log('npm is running');
+
+    setTimeout(() => {
+      runWeb();
+    }, 2000);
+  } catch (error) {
+    console.error(`npm running error: ${error}`);
+  }
+} else {
+  console.log('NEZHA variable is empty, skip running');
+  runWeb();
+}
+
+
+function runWeb() {
+  const command1 = `nohup ./web -c ./config.json >/dev/null 2>&1 &`;
+  exec(command1, (error) => {
+    if (error) {
+      console.error(`web running error: ${error}`);
+    } else {
+      console.log('web is running');
+
+      setTimeout(() => {
+        runServer();
+      }, 2000);
+    }
+  });
+}
+
+
+function runServer() {
+
+  const command2 = `nohup ./bot tunnel --edge-ip-version auto --no-autoupdate --protocol http2 run --token ${ARGO_AUTH} >/dev/null 2>&1 &`;
+
+  exec(command2, (error) => {
+    if (error) {
+      console.error(`bot running error: ${error}`);
+    } else {
+      console.log('bot is running');
+    }
+  });
+}
+
+app.listen(port, () => console.log(`App is listening on port ${port}!`));
